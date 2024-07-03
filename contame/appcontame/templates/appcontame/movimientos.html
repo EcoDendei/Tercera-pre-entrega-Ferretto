@@ -1,0 +1,52 @@
+{% extends 'appcontame/index.html' %}
+
+
+{% block titulo_pagina %}
+<title>Contame App - Movimientos</title> 
+{% endblock titulo_pagina %}
+    
+
+{% block titulo %}
+<h1 class="mt-4">Movimientos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Movimientos</li>
+</ol>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Listado de Movimientos
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Monto</th>
+                    <th>Asiento</th>
+                    <th>Subcuenta</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Monto</th>
+                    <th>Asiento</th>
+                    <th>Subcuenta</th>
+            </tfoot>
+            <tbody>
+            {% for movimiento in movimientos %}
+                <tr>
+                    <td>{{ movimiento.id }}</td>
+                    <td>{{ movimiento.monto }}</td>
+                    <td>{{ movimiento.asiento_id }}</td>
+                    <td>{{ movimiento.cuenta_id }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>                        
+{% endblock contenido %}

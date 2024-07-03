@@ -1,0 +1,32 @@
+{% extends 'appcontame/index.html' %}
+
+
+{% block titulo_pagina %}
+<title>Contame App - Formulario Subcuentas</title> 
+{% endblock titulo_pagina %}
+    
+
+{% block titulo %}
+<h1 class="mt-4">Subcuentas</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Formulario Alta Subcuentas</li>
+</ol>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Carga de una nueva Subcuenta
+    </div>
+    <div class="card-body">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+</div>                        
+{% endblock contenido %}

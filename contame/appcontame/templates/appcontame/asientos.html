@@ -1,0 +1,53 @@
+{% extends 'appcontame/index.html' %}
+
+
+{% block titulo_pagina %}
+<title>Contame App - Asientos</title> 
+{% endblock titulo_pagina %}
+    
+
+{% block titulo %}
+<h1 class="mt-4">Asientos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Asientos</li>
+</ol>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Listado de Asientos
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                </tr>
+            </tfoot>
+            <tbody>
+            {% for asiento in asientos %}
+                <tr>
+                    <td>{{ asiento.id }}</td>
+                    <td>{{ asiento.fecha }}</td>
+                    <td>{{ asiento.desc }}</td>
+                    <td>{{ asiento.estado }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>                        
+{% endblock contenido %}

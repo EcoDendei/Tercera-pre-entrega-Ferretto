@@ -1,0 +1,52 @@
+{% extends 'appcontame/index.html' %}
+
+
+{% block titulo_pagina %}
+<title>Contame App - Monedas</title> 
+{% endblock titulo_pagina %}
+    
+
+{% block titulo %}
+<h1 class="mt-4">Monedas</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Monedas</li>
+</ol>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Listado de Movimientos
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Sigla</th>
+                    <th>Simbolo</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Sigla</th>
+                    <th>Simbolo</th>
+            </tfoot>
+            <tbody>
+            {% for moneda in monedas %}
+                <tr>
+                    <td>{{ moneda.id }}</td>
+                    <td>{{ moneda.nombre }}</td>
+                    <td>{{ moneda.sigla }}</td>
+                    <td>{{ moneda.simbolo }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>                        
+{% endblock contenido %}
